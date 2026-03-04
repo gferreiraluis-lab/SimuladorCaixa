@@ -118,6 +118,7 @@ Endpoint responsável por registrar uma nova simulação de investimento.
 `POST /simulacoes`
 
 Exemplo de requisição:
+[
 
 {
 
@@ -130,6 +131,8 @@ Exemplo de requisição:
   "tipoProduto": 1
 
 }
+
+]
 
 Possíveis respostas
 
@@ -154,6 +157,7 @@ Exemplo de resposta
 [
 
 {
+
     "simulacaoId": 1,
     
     "clienteId": 123,
@@ -180,6 +184,8 @@ Retorna estatísticas das simulações de um cliente.
 
 Exemplo de resposta:
 
+[
+
 {
 
   "clienteId": 123,
@@ -195,6 +201,8 @@ Exemplo de resposta:
   "rentabilidadeMedia": 0.13
   
 }
+
+]
 
 ## Testes
 
