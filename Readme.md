@@ -106,11 +106,95 @@ Body
 
 }
 
-## Utilização
+2. No Swagger clique em Authorize e informe:
 
-No Swagger clique em Authorize e informe:
+`Bearer <seu_token>`
 
-Bearer <seu_token>
+## Utilização dos Endpoints
+1. Criar Simulação
+
+Endpoint responsável por registrar uma nova simulação de investimento.
+
+`POST /simulacoes`
+
+Exemplo de requisição:
+
+{
+
+  "clienteId": 123,
+  
+  "valor": 10000,
+  
+  "prazoMeses": 12,
+  
+  "tipoProduto": 1
+
+}
+
+Possíveis respostas
+
+Status	Descrição
+
+`201`	Simulação criada com sucesso
+
+`400`	Erro de validação
+
+`401`	Usuário não autenticado
+
+`422`	Nenhum produto elegível encontrado
+
+2. Consultar Simulações de um Cliente
+
+Retorna o histórico de simulações realizadas por um cliente.
+
+`GET /simulacoes?clienteId=123`
+
+Exemplo de resposta
+
+[
+
+{
+    "simulacaoId": 1,
+    
+    "clienteId": 123,
+    
+    "produtoId": 2,
+    
+    "valor": 10000,
+    
+    "prazoMeses": 12,
+    
+    "valorFinal": 11200,
+    
+    "dataSimulacaoUtc": "2026-03-04T15:00:00Z"
+    
+  }
+  
+]
+
+3. Consultar Dados Agregados
+
+Retorna estatísticas das simulações de um cliente.
+
+`GET /simulacoes/agregadas?clienteId=123`
+
+Exemplo de resposta:
+
+{
+
+  "clienteId": 123,
+  
+  "totalSimulacoes": 2,
+  
+  "valorTotalInvestido": 20000,
+  
+  "valorTotalProjetado": 22600,
+  
+  "ganhoTotal": 2600,
+  
+  "rentabilidadeMedia": 0.13
+  
+}
 
 ## Testes
 
