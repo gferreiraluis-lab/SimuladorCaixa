@@ -70,16 +70,16 @@ Retorna:
 
 - Acesse a pasta do projeto
 cd SimuladorCaixa
-- Restaurar pacotes
+- Restaurar pacotes comando: 
 dotnet restore
-- Executar a API
+- Executar a API comando: 
 dotnet run --project SimuladorCaixa.Api
 
 - Acessar documentação da API
 
 Após iniciar a aplicação, acessar:
 
-"http://localhost:<porta>/swagger"
+http://localhost:"porta"/swagger
 
 ## Autenticação
 
@@ -111,9 +111,9 @@ Os testes incluem:
 - testes de integração dos endpoints
 
 ## Executar com Docker
-- Build da imagem
+- Build da imagem comando: 
 docker build -t simuladorcaixa-api .
-- Executar container
+- Executar container comando: 
 docker run --rm -p 8080:8080 simuladorcaixa-api
 
 Swagger disponível em:
