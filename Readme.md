@@ -12,7 +12,7 @@
 
 ## Tomadas de decisões e Escolhas
 
-Clean Architecture
+`Clean Architecture`
 
 O projeto foi estruturado utilizando Clean Architecture para garantir:
 
@@ -25,7 +25,7 @@ O projeto foi estruturado utilizando Clean Architecture para garantir:
 - independência da infraestrutura
 
 
-JWT
+`JWT`
 
 Foi implementada autenticação utilizando JWT Bearer Token.
 
@@ -35,7 +35,7 @@ Fluxo:
 
 - Token é utilizado para acessar endpoints protegidos.
 
-Logs Estruturados
+`Logs Estruturados`
 
 O projeto implementa logs estruturados utilizando ILogger, permitindo rastreamento de eventos importantes como:
 
@@ -47,7 +47,7 @@ O projeto implementa logs estruturados utilizando ILogger, permitindo rastreamen
 
 - regras de negócio
 
-Endpoint de Agregação 
+`Endpoint de Agregação` 
 
 Foi implementado um endpoint para consolidar informações das simulações de um cliente.
 
