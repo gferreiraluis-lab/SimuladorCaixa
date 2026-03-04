@@ -47,23 +47,19 @@ O projeto implementa logs estruturados utilizando ILogger, permitindo rastreamen
 
 - regras de negócio
 
-`Endpoint de Agregação` 
+`Produtos de Investimento Cadastrados`
 
-Foi implementado um endpoint para consolidar informações das simulações de um cliente.
+Durante a inicialização da aplicação, um processo de seed do banco de dados cadastra automaticamente alguns produtos de investimento utilizados nas simulações.
 
-GET /simulacoes/agregadas?clienteId=123
+Os produtos disponíveis são:
 
-Retorna:
 
-- total investido
-
-- total projetado
-
-- ganho total
-
-- quantidade de simulações
-
-- rentabilidade média
+| ID | Produto | Tipo | Rentabilidade Anual | Risco | Prazo (meses) | Valor Mínimo | Valor Máximo |
+|----|--------|------|--------------------|------|---------------|-------------|-------------|
+| 1 | CDB Caixa Premium | CDB | 12% | Médio | 6 - 36 | R$ 5.000 | R$ 500.000 |
+| 2 | LCI Caixa | LCI | 9,5% | Baixo | 6 - 36 | R$ 2.000 | R$ 300.000 |
+| 3 | LCA Caixa Agro | LCA | 9,8% | Baixo | 6 - 48 | R$ 2.000 | R$ 400.000 |
+| 4 | Tesouro Selic Simulado | Tesouro | 11% | Baixo | 1 - 60 | R$ 100 | R$ 1.000.000 |
 
 
 ## Como executar em ambiente local
@@ -118,7 +114,7 @@ Endpoint responsável por registrar uma nova simulação de investimento.
 `POST /simulacoes`
 
 Exemplo de requisição:
-[
+
 
 {
 
@@ -132,7 +128,7 @@ Exemplo de requisição:
 
 }
 
-]
+
 
 Possíveis respostas
 
@@ -154,7 +150,7 @@ Retorna o histórico de simulações realizadas por um cliente.
 
 Exemplo de resposta
 
-[
+
 
 {
 
@@ -174,7 +170,7 @@ Exemplo de resposta
     
   }
   
-]
+
 
 3. Consultar Dados Agregados
 
@@ -184,7 +180,7 @@ Retorna estatísticas das simulações de um cliente.
 
 Exemplo de resposta:
 
-[
+
 
 {
 
@@ -202,7 +198,7 @@ Exemplo de resposta:
   
 }
 
-]
+
 
 ## Testes
 
@@ -219,7 +215,7 @@ Os testes incluem:
 ## Executar com Docker
 - Build da imagem comando:
    
-`docker build -t simuladorcaixa-api`
+`docker build -t simuladorcaixa-api .`
 
 - Executar container comando: 
 
