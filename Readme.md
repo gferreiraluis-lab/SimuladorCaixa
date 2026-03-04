@@ -98,11 +98,12 @@ Body
 No Swagger clique em Authorize e informe:
 
 Bearer <seu_token>
-Testes
 
-## Para rodar os testes automatizados:
+## Testes
 
-dotnet test
+Para rodar os testes automatizados:
+
+`dotnet test`
 
 Os testes incluem:
 
@@ -111,10 +112,13 @@ Os testes incluem:
 - testes de integração dos endpoints
 
 ## Executar com Docker
-- Build da imagem comando: 
-docker build -t simuladorcaixa-api .
+- Build da imagem comando:
+   
+`docker build -t simuladorcaixa-api`
+
 - Executar container comando: 
-docker run --rm -p 8080:8080 simuladorcaixa-api
+
+`docker run --rm -p 8080:8080 simuladorcaixa-api`
 
 Swagger disponível em:
 
