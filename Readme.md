@@ -68,29 +68,42 @@ Retorna:
 
 ## Como executar em ambiente local
 
-- Acesse a pasta do projeto
-cd SimuladorCaixa
-- Restaurar pacotes comando: 
-dotnet restore
-- Executar a API comando: 
-dotnet run --project SimuladorCaixa.Api
+1. Acesse a pasta do projeto
+   
+`cd SimuladorCaixa`
 
-- Acessar documentação da API
+2. Restaurar pacotes comando:
+    
+`dotnet restore`
 
-Após iniciar a aplicação, acessar:
+3. Executar a API comando: 
 
-http://localhost:"porta"/swagger
+`dotnet run --project SimuladorCaixa.Api`
+
+4. Acessar documentação da API
+
+Após iniciar a aplicação, acessar no navegador:
+
+`http://localhost:"porta"/swagger`
 
 ## Autenticação
 
-Para acessar os endpoints protegidos, primeiro gere um token.
+1. Para acessar os endpoints protegidos, primeiro gere um token.
 
 Endpoint
-POST /auth/token
+
+`POST /auth/token`
+
+JSON
+
 Body
+
 {
+
   "usuario": "admin",
+  
   "senha": "admin"
+
 }
 
 ## Utilização
