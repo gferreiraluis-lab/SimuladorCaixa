@@ -31,23 +31,23 @@ Foi implementada autenticação utilizando JWT Bearer Token.
 
 Fluxo:
 
-Usuário obtém token via endpoint /auth/token
+- Usuário obtém token via endpoint /auth/token
 
-Token é utilizado para acessar endpoints protegidos.
+- Token é utilizado para acessar endpoints protegidos.
 
 Logs Estruturados
 
 O projeto implementa logs estruturados utilizando ILogger, permitindo rastreamento de eventos importantes como:
 
-autenticação
+- autenticação
 
-criação de simulação
+- criação de simulação
 
-consultas
+- consultas
 
-regras de negócio
+- regras de negócio
 
-Endpoint de Agregação (Bônus)
+Endpoint de Agregação 
 
 Foi implementado um endpoint para consolidar informações das simulações de um cliente.
 
@@ -55,49 +55,33 @@ GET /simulacoes/agregadas?clienteId=123
 
 Retorna:
 
-total investido
+- total investido
 
-total projetado
+- total projetado
 
-ganho total
+- ganho total
 
-quantidade de simulações
+- quantidade de simulações
 
-rentabilidade média
+- rentabilidade média
 
-Estrutura do Projeto
-SimuladorCaixa
-│
-├── SimuladorCaixa.Api
-│
-├── SimuladorCaixa.Aplicacao
-│   Casos de uso, DTOs e contratos
-│
-├── SimuladorCaixa.Dominio
-│   Entidades e regras de negócio
-│
-├── SimuladorCaixa.Infraestrutura
-│   Persistência, DbContext e repositórios
-│
-├── SimuladorCaixa.Testes
-│   Testes unitários e de integração
-│
-└── SimuladorCaixa.sln
-Como executar em ambiente local
-1. Clone o repositório
-git clone <url-do-repositorio>
-2. Acesse a pasta do projeto
+
+## Como executar em ambiente local
+
+- Acesse a pasta do projeto
 cd SimuladorCaixa
-3. Restaurar pacotes
+- Restaurar pacotes
 dotnet restore
-4. Executar a API
+- Executar a API
 dotnet run --project SimuladorCaixa.Api
-Acessar documentação da API
+
+- Acessar documentação da API
 
 Após iniciar a aplicação, acessar:
 
-http://localhost:<porta>/swagger
-Autenticação
+"http://localhost:<porta>/swagger"
+
+## Autenticação
 
 Para acessar os endpoints protegidos, primeiro gere um token.
 
@@ -108,44 +92,34 @@ Body
   "usuario": "admin",
   "senha": "admin"
 }
-Utilização
+
+## Utilização
 
 No Swagger clique em Authorize e informe:
 
 Bearer <seu_token>
 Testes
 
-Para rodar os testes automatizados:
+## Para rodar os testes automatizados:
 
 dotnet test
 
 Os testes incluem:
 
-testes unitários
+- testes unitários
 
-testes de integração dos endpoints
+- testes de integração dos endpoints
 
-Executar com Docker
-Build da imagem
+## Executar com Docker
+- Build da imagem
 docker build -t simuladorcaixa-api .
-Executar container
+- Executar container
 docker run --rm -p 8080:8080 simuladorcaixa-api
 
 Swagger disponível em:
 
-http://localhost:8080/swagger
-Configuração
+"http://localhost:8080/swagger"
 
-As configurações da aplicação estão nos arquivos:
 
-appsettings.json
-appsettings.Development.json
 
-Principais configurações:
-
-connection string do SQLite
-
-configuração JWT
-
-logging
 
